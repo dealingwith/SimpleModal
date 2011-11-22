@@ -1,0 +1,72 @@
+<html>
+<head>
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+        $(".link").click(function(){
+          $(".hidden_content").hide();
+          $(".hidden_content_model").show();
+          $("." + $(this).attr("id") + "_content").show();
+        });
+        
+        $(".close_hidden_content").click(function(){
+          $(".hidden_content_model").hide();
+          $(this).closest(".hidden_content").hide();
+        });
+    });
+  </script>
+  <style type="text/css">
+      .simpleModal {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+      .hidden_content .container {
+          background: #fff;
+      }
+      .opac {
+          background: #e9e9e9;
+          opacity: 0.5;
+      }
+      .display_none, .hidden_content, .hidden_content_model {
+          display: none;
+      }
+      .hidden_content {
+          top: 20px;
+          vertical-align: center;
+      }
+      .hidden_content .container {
+          border: 1px solid #e9e9e9;
+          margin: 0 auto;
+          padding-top: 10px;
+          text-align: center;
+          -webkit-border-radius: 5px; 
+          -moz-border-radius: 5px;
+          -moz-box-shadow: #999 4px 4px 6px;
+          -webkit-box-shadow: #999 4px 4px 6px;
+      }
+      .close_hidden_content {
+          text-align: right;
+          padding: 10px;
+      }
+  </style>
+</head>
+<body>
+
+    <p><a href="#" id="george" class="link">Modal</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    <div class="simpleModal opac hidden_content_model">
+    </div>
+    
+    <div class="simpleModal hidden_content george_content">
+      <div class="container" style="width:445px">
+        <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/OogLnq0tkOI&hl=en_US&fs=1&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/OogLnq0tkOI&hl=en_US&fs=1&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+        <p class="close_hidden_content"><a href="#">close</a></p>
+      </div>
+    </div>
+
+</body>
+</html>
